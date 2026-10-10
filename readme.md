@@ -23,7 +23,7 @@ Scaling: RV1 (A0) 0-5 V = 0-300 V, RV2 (A1) 0-5 V = 0-20 A.
 3. Open the `diagram.json` tab and replace its contents with `project_files/diagram.json`.
 4. Open `libraries.txt` (create it if missing) and paste `LiquidCrystal`.
 5. Press **Start simulation**. The serial monitor is at the bottom; type commands and press Enter.
-
+or,simply go to https://wokwi.com/projects/477406594723296257
 If the relay clicks the wrong way (load ON while the system says OFF), set `RELAY_ACTIVE_HIGH` to `0` at the top of the sketch.
 
 ### Pin map
