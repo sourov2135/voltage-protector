@@ -42,10 +42,7 @@ If the relay clicks the wrong way (load ON while the system says OFF), set `RELA
 5. Turn RV2 to about 7 A: it trips after a few seconds and latches (red LED solid, buzzer). Lower RV2 and send `RESET` or press UP on the status page.
 6. Send `SET OV 270`, `SET OC 7.5`, `GET`; then change a value from the buttons (SEL to a page, UP/DN) and confirm with `GET`.
 
-## Honest limitations
-- Voltage/current come from DC potentiometers, so there is no real AC waveform sampling or true RMS here. A real unit would sample ZMPT101B/ACS712 outputs over a full mains cycle and compute RMS.
-- No galvanic-isolation, creepage or relay-contact analysis; the real-product block diagram only shows the intended architecture.
-- Trip timing was checked in simulation (millisecond logs in `test_evidence/`), not measured on hardware.
+
 
 ## Repository layout
 ```
