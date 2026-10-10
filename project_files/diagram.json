@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "author": "Mostofa Tanvir Sourov",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 93,
+      "left": -277,
+      "rotate": 90,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -169.37,
+      "left": 256,
+      "attrs": { "pins": "full" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot_v", "top": 17.9, "left": 307, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot_i", "top": 8.3, "left": 566.2, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_sel",
+      "top": 246.2,
+      "left": 105.6,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_up",
+      "top": 303.8,
+      "left": 105.6,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_dn",
+      "top": 361.4,
+      "left": 105.6,
+      "attrs": { "color": "blue" }
+    },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 96.2, "left": 28.8, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_load",
+      "top": 100,
+      "left": 470,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_load",
+      "top": 130,
+      "left": 520,
+      "attrs": { "color": "yellow", "label": "LOAD" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_red",
+      "top": 250,
+      "left": 330,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_red",
+      "top": 284.4,
+      "left": 224.6,
+      "attrs": { "color": "red", "label": "FAULT" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_grn",
+      "top": 350,
+      "left": 330,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_grn",
+      "top": 284.4,
+      "left": 464.6,
+      "attrs": { "color": "green", "label": "OK" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 357.6,
+      "left": 645,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:RS", "uno:12", "green", [] ],
+    [ "lcd1:E", "uno:11", "green", [] ],
+    [ "lcd1:D4", "uno:5", "green", [] ],
+    [ "lcd1:D5", "uno:4", "green", [] ],
+    [ "lcd1:D6", "uno:3", "green", [] ],
+    [ "lcd1:D7", "uno:2", "green", [] ],
+    [ "lcd1:VSS", "uno:GND.2", "black", [] ],
+    [ "lcd1:V0", "uno:GND.2", "black", [] ],
+    [ "lcd1:RW", "uno:GND.2", "black", [] ],
+    [ "lcd1:K", "uno:GND.2", "black", [] ],
+    [ "lcd1:VDD", "uno:5V", "red", [] ],
+    [ "lcd1:A", "uno:5V", "red", [] ],
+    [ "pot_v:VCC", "uno:5V", "red", [] ],
+    [ "pot_v:GND", "uno:GND.2", "black", [] ],
+    [ "pot_v:SIG", "uno:A0", "orange", [] ],
+    [ "pot_i:VCC", "uno:5V", "red", [] ],
+    [ "pot_i:GND", "uno:GND.2", "black", [] ],
+    [ "pot_i:SIG", "uno:A1", "orange", [] ],
+    [ "btn_sel:1.l", "uno:8", "blue", [] ],
+    [ "btn_sel:2.l", "uno:GND.1", "black", [] ],
+    [ "btn_up:1.l", "uno:9", "blue", [] ],
+    [ "btn_up:2.l", "uno:GND.1", "black", [] ],
+    [ "btn_dn:1.l", "uno:10", "blue", [] ],
+    [ "btn_dn:2.l", "uno:GND.1", "black", [] ],
+    [ "relay1:VCC", "uno:5V", "red", [] ],
+    [ "relay1:GND", "uno:GND.2", "black", [] ],
+    [ "relay1:IN", "uno:7", "purple", [] ],
+    [ "relay1:COM", "uno:5V", "red", [] ],
+    [ "relay1:NO", "r_load:1", "yellow", [] ],
+    [ "r_load:2", "led_load:A", "yellow", [] ],
+    [ "led_load:C", "uno:GND.2", "black", [] ],
+    [ "uno:6", "r_red:1", "red", [] ],
+    [ "r_red:2", "led_red:A", "red", [] ],
+    [ "led_red:C", "uno:GND.1", "black", [] ],
+    [ "uno:13", "r_grn:1", "green", [] ],
+    [ "r_grn:2", "led_grn:A", "green", [] ],
+    [ "led_grn:C", "uno:GND.1", "black", [] ],
+    [ "uno:A2", "bz1:2", "gray", [] ],
+    [ "bz1:1", "uno:GND.1", "black", [] ]
+  ],
+  "dependencies": {}
+}
